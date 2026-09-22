@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Pessoas</title>
+
+    <style>
+      .user-list {
+        list-style: none;
+
+        li:not(:last-child) {
+          border-bottom: 1px solid #ccc;
+          padding: 10px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores ex, tempore dignissimos alias nihil corporis
+      doloribus nemo ea.
+    </p>
+    <hr />
+    <ul id="list" class="user-list"></ul>
+
+    <script type="module">
+      import { users } from './mock.js';
+      const list = document.getElementById('list');
+
+      for (const user of users) {
+        const li = document.createElement('li');
+
+        li.innerHTML = `
+          <p><strong>Nome:</strong> ${user.name}</p>
+          <p><strong>Email:</strong> ${user.email}</p>
+        `;
+
+        list.append(li);
+      }
+    </script>
+  </body>
+</html>

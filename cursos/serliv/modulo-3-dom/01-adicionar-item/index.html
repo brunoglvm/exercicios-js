@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nihil unde? Aut modi enim eum quo rerum aliquam
+      nostrum minus.
+    </p>
+    <hr />
+    <ul id="items">
+      <li>Lorem ipsum dolor sit amet consectetur.</li>
+      <li>Lorem ipsum dolor sit amet consectetur.</li>
+      <li>Lorem ipsum dolor sit amet consectetur.</li>
+      <li>Lorem ipsum dolor sit amet consectetur.</li>
+      <li>Lorem ipsum dolor sit amet consectetur.</li>
+    </ul>
+    <input id="user" type="text" value="" />
+    <button id="newItemBtn">Adicionar item</button>
+
+    <script>
+      const userInput = document.getElementById('user');
+      const newItemBtn = document.getElementById('newItemBtn');
+      const items = document.getElementById('items');
+
+      newItemBtn.addEventListener('click', () => {
+        if (userInput.value.trim() !== '') {
+          const newItem = document.createElement('li');
+          newItem.textContent = userInput.value.trim();
+          console.log(newItem);
+          items.append(newItem);
+        }
+      });
+    </script>
+  </body>
+</html>

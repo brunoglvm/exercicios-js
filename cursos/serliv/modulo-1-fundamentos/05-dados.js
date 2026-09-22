@@ -17,9 +17,7 @@ do {
   }
 
   somasPares++;
-  console.log(
-    `Jogada ${jogadas}: ${dado1} + ${dado2} = ${soma} [Par ${somasPares}/${maxSomasPares}]`,
-  );
+  console.log(`Jogada ${jogadas}: ${dado1} + ${dado2} = ${soma} [Par ${somasPares}/${maxSomasPares}]`);
 } while (somasPares < maxSomasPares);
 
 console.log(`Total de jogadas: ${jogadas}`);

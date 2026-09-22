@@ -6,13 +6,7 @@ let dado2;
 
 let tentativas = 0;
 
-const VALIDO =
-  !isNaN(alvo1) &&
-  !isNaN(alvo2) &&
-  alvo1 >= 1 &&
-  alvo1 <= 6 &&
-  alvo2 >= 1 &&
-  alvo2 <= 6;
+const VALIDO = !isNaN(alvo1) && !isNaN(alvo2) && alvo1 >= 1 && alvo1 <= 6 && alvo2 >= 1 && alvo2 <= 6;
 
 if (!VALIDO) {
   console.log('Digite apenas números entre 1 e 6.');

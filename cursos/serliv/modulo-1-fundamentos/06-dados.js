@@ -17,9 +17,7 @@ do {
   const soma = dado1 + dado2;
   const isPar = soma % 2 === 0;
 
-  console.log(
-    `Jogada ${jogadas}: ${dado1} + ${dado2} = ${soma} ${isPar ? '[Par]' : '[Ímpar]'}`,
-  );
+  console.log(`Jogada ${jogadas}: ${dado1} + ${dado2} = ${soma} ${isPar ? '[Par]' : '[Ímpar]'}`);
 
   if (isPar) {
     somasPares++;
