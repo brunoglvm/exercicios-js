@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabela de Produtos</title>
+
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+      }
+
+      td + td {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tabela de produtos</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+        </tr>
+      </thead>
+      <tbody id="produtos"></tbody>
+    </table>
+
+    <script type="module">
+      import { produtos } from './mock.js';
+
+      const tabelaProdutos = document.getElementById('produtos');
+
+      for (const produto of produtos) {
+        const { nome, preco, quantidade } = produto;
+
+        const precoFormatado = new Intl.NumberFormat('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        }).format(preco);
+
+        const tr = document.createElement('tr');
+        const tdNome = document.createElement('td');
+        const tdPreco = document.createElement('td');
+        const tdQuantidade = document.createElement('td');
+
+        tdNome.textContent = nome;
+        tdPreco.textContent = precoFormatado;
+        tdQuantidade.textContent = quantidade;
+
+        tr.append(tdNome, tdPreco, tdQuantidade);
+        tabelaProdutos.append(tr);
+      }
+    </script>
+  </body>
+</html>
